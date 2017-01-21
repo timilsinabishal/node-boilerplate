@@ -1,0 +1,25 @@
+{
+  "name": "express-boilerplate",
+  "version": "1.0.0",
+  "description": "A sample boilerplate for express app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bishal Timilsina",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.1.4",
+    "body-parser": "^1.16.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "helmet": "^3.4.0",
+    "lodash": "^4.17.4",
+    "multer": "^1.2.1",
+    "sequelize": "^3.29.0",
+    "socket.io": "^1.7.2"
+  },
+  "devDependencies": {
+    "jasmine": "^2.5.3"
+  }
+}
