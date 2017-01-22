@@ -1,0 +1,23 @@
+app:
+  image: node:7-alpine
+  volumes:
+    - .:/src
+  env_file:
+    - .env
+  expose:
+    - "3000"
+  links:
+    - db
+    - redis
+
+db:
+  image: postgres:9.6-alpine
+  volumes:
+    - /data/postgres/9.6:/var/lib/pgsql/9.6
+  expose:
+    - "5432"
+
+redis:
+  image: redis:alpine
+  expose:
+    - "6379"

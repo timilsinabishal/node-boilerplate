@@ -1,0 +1,15 @@
+app:
+  image: registry.gitab.com/timilsina/express-boilerplate
+  env_file:
+    - .env
+  expose:
+    - "${APP_PORT}"
+  links:
+    - db
+
+db:
+  image: postgres:9.4
+  volumes:
+    - /data/postgres/9.4:/var/lib/pgsql/9.4
+  expose:
+    - "${DB_PORT}"
