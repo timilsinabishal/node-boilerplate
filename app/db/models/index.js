@@ -4,13 +4,14 @@ let fs = require('fs');
 let path = require('path');
 let Sequelize = require('sequelize');
 let basename = path.basename(module.filename);
-let config = require(__dirname + '../../config');
+let config = require('../../../config');
 let db = {};
 
+let sequelize;
 if (config.use_env_variable) {
-    let sequelize = new Sequelize(process.env[config.use_env_variable]);
+    sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
-    let sequelize = new Sequelize(config.database, config.username, config.password, config);
+    sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
 fs.readdirSync(__dirname)
@@ -24,7 +25,7 @@ fs.readdirSync(__dirname)
 
 Object.keys(db).forEach(function (modelName) {
     if (db[modelName].associate) {
-        db[modelName].associate(db);
+        db[modelName].associate(dbj);
     }
 });
 
